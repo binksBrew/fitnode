@@ -1,0 +1,110 @@
+/* Team Page Container */
+.team-container {
+    padding: 20px;
+    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
+    color: #ffffff;
+    text-align: center;
+    min-height: auto;
+    height: 100%;
+    font-family: "Arial", sans-serif;
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Keep above background layers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Space between title and cards */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #ff79c6; /* Theme-specific pink */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Add subtle shadow for emphasis */
+}
+
+/* Team Grid (for cards) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between cards */
+    max-width: 1000px;
+    margin: 0 auto; /* Center the grid */
+    z-index: 2; /* Ensure above background */
+}
+
+/* Individual Card */
+.card {
+    background-color: rgba(75, 0, 130, 0.8); /* Deep purple background for cohesive look */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners for modern look */
+    font-size: 1.2rem;
+    line-height: 1.6; /* Improve readability */
+    color: #f0f0f0; /* Soft white text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    background-color: rgba(238, 130, 238, 0.9); /* Bright violet on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
+    color: #ffffff; /* Bright white text on hover */
+}
+
+/* Card Title (Name of the Team Member) */
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00d1b2; /* Highlight the name with turquoise */
+    font-weight: bold;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Add shadow for emphasis */
+}
+
+/* Card Text (Education and Contact Details) */
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #dddddd; /* Subtle gray for secondary information */
+}
+
+/* LinkedIn Link */
+.linkedin-link {
+    font-size: 1rem;
+    color: #00acee; /* LinkedIn blue */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.linkedin-link:hover {
+    text-decoration: underline; /* Underline for emphasis */
+    color: #ffffff; /* Change to bright white on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.4rem; /* Slightly smaller for smaller screens */
+    }
+
+    .card-title {
+        font-size: 1.3rem; /* Reduce font size */
+    }
+
+    .card-text {
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    .team-grid {
+        gap: 15px; /* Reduce gap between cards */
+    }
+}

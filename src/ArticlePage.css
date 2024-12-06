@@ -1,0 +1,93 @@
+.article-page {
+    padding: 20px;
+    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
+    color: #ffffff;
+    text-align: center;
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Keep above any potential background layers */
+  }
+  
+  .article-header {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #ff79c6; /* Use pink/purple tones to align with the theme */
+  }
+  
+  .dropdown-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 2; /* Ensure above background */
+  }
+  
+  .dropdown-item {
+    background-color: rgba(75, 0, 130, 0.8); /* Deep purple background for a cohesive look */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #f0f0f0; /* Soft white text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+    text-align: left; /* Align content to the left */
+  }
+  
+  .dropdown-title {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  
+  .dropdown-title:hover {
+    color: #ff79c6; /* Pink hover effect */
+  }
+  
+  .dropdown-content {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #eaeaea; /* Light text for readability */
+  }
+  
+  .learn-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff79c6; /* Pink button */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .learn-more:hover {
+    background-color: #e040fb; /* Slightly brighter pink on hover */
+    transform: scale(1.05); /* Subtle enlarge effect */
+  }
+  
+  .learn-more:active {
+    transform: scale(0.95); /* Compression effect on click */
+  }
+  
+  .dropdown-item:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    background-color: rgba(238, 130, 238, 0.9); /* Bright violet on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    color: #ffffff; /* Bright white text for hover state */
+  }
+  
+  .dropdown-item:active {
+    transform: scale(0.98); /* Compression effect on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  

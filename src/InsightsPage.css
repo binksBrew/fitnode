@@ -1,0 +1,50 @@
+.insights-page {
+    padding: 20px;
+    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
+    color: #ffffff;
+    text-align: center;
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+    position: relative; /* Ensure no overlap with other elements */
+    z-index: 1; /* Keep above any potential background layers */
+  }
+  
+  .insights-header {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #ff79c6; /* Use pink/purple tones to align with the theme */
+  }
+  
+  .insights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 2; /* Ensure above background */
+  }
+  
+  .insight-item {
+    background-color: rgba(75, 0, 130, 0.8); /* Deep purple background for a cohesive look */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #f0f0f0; /* Soft white text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .insight-item:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    background-color: rgba(238, 130, 238, 0.9); /* Bright violet on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    color: #ffffff; /* Bright white text for hover state */
+  }
+  
+  .insight-item:active {
+    transform: scale(0.98); /* Compression effect on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
