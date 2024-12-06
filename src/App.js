@@ -5,12 +5,12 @@ import { loadFull } from "tsparticles";
 import EmailSignup from "./EmailSignUp";
 import logo from "./assets/logo.svg"; // Import the logo.svg
 import InsightsPage from "./InsightsPage"; // Import the InsightsPage
-import ArticlePage from './ArticlePage';
+import ArticlePage from "./ArticlePage";
 import HrvGlucosePage from "./HrvGlucosePage";
-import RhrHealthPage from "./RhrHealthPage"
-import HrvRhrGlucosePage from "./HrvRhrGlucosePage"
+import RhrHealthPage from "./RhrHealthPage";
+import HrvRhrGlucosePage from "./HrvRhrGlucosePage";
 import TeamPage from "./TeamPage"; // Adjust the path as per your file structure
-import About from "./About"
+import About from "./About";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; // Import Link and Router
 
 const App = () => {
@@ -23,20 +23,20 @@ const App = () => {
       <AppContainer>
         {/* Add the Header */}
         <Header>
-  <Logo>
-    <Link to="/"> {/* Wrap the logo inside the Link component */}
-      <img src={logo} alt="Logo" />
-    </Link>
-  </Logo>
-  <Heading>a Personalised health companion coming your way!</Heading>
-  <Nav>
-    <Link to="/">Home</Link>
-    <Link to="/BioLoop">BioLoop</Link>
-    <Link to="/articles">Article</Link>
-    <Link to="/team">Team</Link>
-    <Link to="/about">About</Link>
-  </Nav>
-</Header>
+          <Logo>
+            <Link to="/"> {/* Wrap the logo inside the Link component */}
+              <img src={logo} alt="Logo" />
+            </Link>
+          </Logo>
+          <Heading>a Personalised health companion coming your way!</Heading>
+          <Nav>
+            <Link to="/">Home</Link>
+            <Link to="/BioLoop">BioLoop</Link>
+            <Link to="/articles">Article</Link>
+            <Link to="/team">Team</Link>
+            <Link to="/about">About</Link>
+          </Nav>
+        </Header>
 
         <Particles
           id="tsparticles"
@@ -113,7 +113,7 @@ const Header = styled.header`
 
 const Logo = styled.div`
   position: absolute;
-  top: 50px;
+  top: 20px;
   left: 25px;
 
   img {
