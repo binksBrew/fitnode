@@ -1,15 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Your Firebase configuration
+// Firebase configuration from .env file
 const firebaseConfig = {
-  apiKey: "AIzaSyD8BVLKaxQVijOIzQHRp7v7uWmLq9qATDU",
-  authDomain: "fitnode-1d858.firebaseapp.com",
-  projectId: "fitnode-1d858",
-  storageBucket: "fitnode-1d858.firebasestorage.app",
-  messagingSenderId: "535225243261",
-  appId: "1:535225243261:web:9de0185c25bc7fd1504314",
-  measurementId: "G-4985D14ESY",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
