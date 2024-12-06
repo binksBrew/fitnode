@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://fitnode.in",
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@sendgrid/mail": "^8.1.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
