@@ -1,85 +1,144 @@
 .commonpage {
-    padding: 20px;
-    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
-    color: #ffffff;
-    text-align: center;
-    min-height: auto;
-    height: 100%; /* Ensure it grows with content */
-    font-family: "Arial", sans-serif;
-    position: relative; /* Ensure no overlap with other elements */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content at the top */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    box-sizing: border-box; /* Ensure padding doesn't add to element width */
-    align-items: flex-start; /* Align content at the top */
-  }
-  
-  .page-header {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-    color: #ff79c6; /* Use pink/purple tones to align with the theme */
-    text-align: center;
+  padding: 50px 20px 150px; /* Add sufficient padding for top and bottom */
+  background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Theme-specific gradient */
+  color: #ffffff; /* Ensure text visibility */
+  text-align: center;
+  min-height: 100vh; /* Ensure the container spans full viewport height */
+  font-family: "Arial", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the top */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
+  box-sizing: border-box; /* Include padding in layout calculations */
+  align-items: center; /* Center align the content */
+}
+
+/* Page Header */
+.page-header {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ff79c6; /* Use pink/purple tones to align with the theme */
+  text-align: center;
   font-weight: bold;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for emphasis */
-  }
-  
-  .content {
-    /* background: rgba(50, 50, 50, 0.9); Dark container for contrast
-     */
-     background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Add shadow for depth */
-    padding: 30px;
-    border-radius: 16px; /* Rounded corners for modern look */
-    max-width: 95%; /* Limit content width */
-    width: 100%; /* Make it responsive */
+  /* Responsive header font size */
+  @media (max-width: 768px) {
+      font-size: 2.2rem;
   }
 
-  .content h2 {
-    font-size: 2rem; /* Subheading size */
-    color: #ff79c6; /* Pink for subheadings */
-    margin-top: 20px;
-    font-weight: bold;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Shadow for subheadings */
+  @media (max-width: 480px) {
+      font-size: 1.8rem;
   }
-  .content p {
-    font-size: 1.2rem; /* Standard body text size */
-    line-height: 1.8; /* Improve readability */
-    color: #f0f0f0; /* Soft white for readability */
-    margin-bottom: 20px;
-  }
+}
 
-  content ul {
-    list-style-type: disc; /* Standard bullet points */
-    margin-left: 20px; /* Indent for list */
-    padding-left: 20px;
-    color: #eaeaea; /* Lighter color for bullet text */
-  }
-  
-  .content ul ul {
-    list-style-type: circle; /* Nested bullet points */
-    margin-left: 20px;
-  }
-  
-  .content li {
-    margin-bottom: 10px; /* Space between list items */
-  }
-  
-  .content strong {
-    color: #ffffff; /* Bright white for bold text */
-    font-weight: bold;
-  }
-
-
+/* Content Section */
 .content {
-    text-align: left; /* Align content for readability */
-  }
-  
-  .content p:last-child {
-    margin-bottom: 0; /* Remove margin for the last paragraph */
+  background: rgba(53, 20, 79, 0.95); /* Slightly transparent background for contrast */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Add shadow for depth */
+  padding: 30px;
+  border-radius: 16px; /* Rounded corners for modern look */
+  max-width: 1200px; /* Limit maximum width */
+  width: 95%; /* Responsive width */
+  text-align: left; /* Align content for readability */
+  box-sizing: border-box; /* Include padding in calculations */
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      padding: 20px;
   }
 
-  .content h2:first-child {
-    margin-top: 0; /* Remove top margin for the first heading */
+  @media (max-width: 480px) {
+      padding: 15px;
   }
+}
+
+/* Content Subheadings */
+.content h2 {
+  font-size: 2rem; /* Subheading size */
+  color: #ff79c6; /* Pink for subheadings */
+  margin-top: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Shadow for subheadings */
+
+  /* Responsive font size */
+  @media (max-width: 768px) {
+      font-size: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
+      font-size: 1.6rem;
+  }
+}
+
+/* Paragraphs in Content */
+.content p {
+  font-size: 1.2rem; /* Standard body text size */
+  line-height: 1.8; /* Improve readability */
+  color: #f0f0f0; /* Soft white for readability */
+  margin-bottom: 20px;
+
+  /* Responsive font size */
+  @media (max-width: 768px) {
+      font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+      font-size: 1rem;
+  }
+}
+
+/* Bullet Lists in Content */
+.content ul {
+  list-style-type: disc; /* Standard bullet points */
+  margin-left: 20px; /* Indent for list */
+  padding-left: 20px;
+  color: #eaeaea; /* Lighter color for bullet text */
+}
+
+/* Nested Lists */
+.content ul ul {
+  list-style-type: circle; /* Nested bullet points */
+  margin-left: 20px;
+}
+
+/* List Items */
+.content li {
+  margin-bottom: 10px; /* Space between list items */
+
+  /* Responsive font size */
+  @media (max-width: 768px) {
+      font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+      font-size: 0.9rem;
+  }
+}
+
+/* Bold Text */
+.content strong {
+  color: #ffffff; /* Bright white for bold text */
+  font-weight: bold;
+}
+
+/* Remove Margins for Specific Elements */
+.content p:last-child {
+  margin-bottom: 0; /* Remove margin for the last paragraph */
+}
+
+.content h2:first-child {
+  margin-top: 0; /* Remove top margin for the first heading */
+}
+
+/* General Body Styling to Avoid Cut-offs */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}

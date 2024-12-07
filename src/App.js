@@ -3,19 +3,19 @@ import styled from "styled-components";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import EmailSignup from "./EmailSignUp";
-import logo from "./assets/logo.svg"; // Import the logo.svg
-import InsightsPage from "./InsightsPage"; // Import the InsightsPage
+import logo from "./assets/logo.svg";
+import InsightsPage from "./InsightsPage";
 import ArticlePage from "./ArticlePage";
 import HrvGlucosePage from "./HrvGlucosePage";
 import RhrHealthPage from "./RhrHealthPage";
 import HrvRhrGlucosePage from "./HrvRhrGlucosePage";
-import TeamPage from "./TeamPage"; // Adjust the path as per your file structure
+import TeamPage from "./TeamPage";
 import About from "./About";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; // Import Link and Router
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const App = () => {
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine); // Correctly load the engine
+    await loadFull(engine); // load the engine
   }, []);
 
   return (
@@ -97,9 +97,14 @@ const AppContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Adjusted for header and content */
-  justify-content: flex-start; /* Align items to start */
+  flex-direction: column;
+  justify-content: flex-start;
   background: linear-gradient(to bottom, #0f1e35, #35144f, #5a2b68, #873d84, #a65299);
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 20px;
+  }
 `;
 
 /* Header Section */
@@ -109,6 +114,11 @@ const Header = styled.header`
   padding: 20px;
   color: white;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.div`
@@ -117,17 +127,30 @@ const Logo = styled.div`
   left: 25px;
 
   img {
-    width: 50px; /* Slightly larger for better visibility */
-    height: 50px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    top: 10px;
+    left: 10px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
 const Heading = styled.h2`
-  margin: 20px 0 10px 0; /* Adjusted to align visually */
-  font-size: 1.8rem; /* Larger and more readable */
-  font-weight: 400; /* Slightly bold for emphasis */
+  margin: 20px 0 10px 0;
+  font-size: 1.8rem;
+  font-weight: 400;
   font-family: "Arial", sans-serif;
   color: #f0f0f0;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Nav = styled.nav`
@@ -146,6 +169,15 @@ const Nav = styled.nav`
       color: #ff79c6;
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+      font-size: 1rem;      
+    }
+  }
 `;
 
 /* Content Section */
@@ -154,7 +186,7 @@ const Content = styled.div`
   text-align: center;
   color: white;
   z-index: 1;
-  margin-top: 70px; /* Added margin to push it below the header */
+  margin-top: 70px;
 
   h1 {
     font-size: 2.8rem;
@@ -171,6 +203,18 @@ const Content = styled.div`
     font-family: "Arial", sans-serif;
     color: #ddd;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 const InputContainer = styled.div`
@@ -178,4 +222,9 @@ const InputContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 5px;
+  }
 `;

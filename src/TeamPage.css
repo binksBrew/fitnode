@@ -1,20 +1,20 @@
 /* Team Page Container */
 .team-container {
-    padding: 20px;
-    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Match website theme */
-    color: #ffffff;
+    padding: 50px 20px 150px; /* Match padding with Insights Page */
+    background: linear-gradient(to bottom, #121212, #35144f, #5a2b68, #873d84); /* Theme background */
+    color: #ffffff; /* Ensure text visibility */
     text-align: center;
-    min-height: auto;
-    height: 100%;
+    min-height: 100vh; /* Full viewport height */
     font-family: "Arial", sans-serif;
-    position: relative; /* Ensure no overlap with other elements */
-    z-index: 1; /* Keep above background layers */
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden; /* Disable horizontal scrolling */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Space between title and cards */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-
+    gap: 30px; /* Space between title and grid */
+    box-sizing: border-box; /* Include padding in layout */
+    overflow: auto;
 }
 
 /* Page Title */
@@ -22,38 +22,64 @@
     font-size: 2.8rem;
     margin-bottom: 30px;
     color: #ff79c6; /* Theme-specific pink */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Add subtle shadow for emphasis */
+    text-align: center; /* Centered text */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    word-wrap: break-word; /* Prevent title overflow */
+
+    /* Responsive header font size */
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.8rem;
+    }
 }
 
 /* Team Grid (for cards) */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid layout */
     gap: 20px; /* Space between cards */
-    max-width: 1000px;
-    margin: 0 auto; /* Center the grid */
-    z-index: 2; /* Ensure above background */
+    width: 100%; /* Full width to prevent overflow */
+    max-width: 1200px; /* Limit grid width */
+    margin: 0 auto 30px; /* Center the grid and add bottom margin */
+    box-sizing: border-box; /* Include padding in layout calculations */
+    padding: 10px; /* Ensure inner padding to prevent cutting */
 }
 
 /* Individual Card */
 .card {
-    background-color: rgba(75, 0, 130, 0.8); /* Deep purple background for cohesive look */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+    background-color: rgba(75, 0, 130, 0.8); /* Deep purple for cohesive look */
+    border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 12px; /* Rounded corners for modern look */
-    font-size: 1.2rem;
-    line-height: 1.6; /* Improve readability */
-    color: #f0f0f0; /* Soft white text for readability */
+    font-size: 1.3rem; /* Match font size with Insights Page */
+    line-height: 1.5; /* Improve readability */
+    color: #f0f0f0; /* Ensure text contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content to the left */
+    word-wrap: break-word; /* Handle long content gracefully */
+    box-sizing: border-box; /* Include padding and borders in layout */
+
+    /* Responsive font size and padding */
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+        padding: 10px;
+    }
 }
 
 /* Card Hover Effect */
 .card:hover {
-    transform: scale(1.05); /* Enlarge slightly on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
     background-color: rgba(238, 130, 238, 0.9); /* Bright violet on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhanced shadow */
     color: #ffffff; /* Bright white text on hover */
@@ -63,9 +89,18 @@
 .card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #00d1b2; /* Highlight the name with turquoise */
+    color: #00d1b2; /* Highlight name with turquoise */
     font-weight: bold;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Add shadow for emphasis */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+        font-size: 1.3rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.2rem;
+    }
 }
 
 /* Card Text (Education and Contact Details) */
@@ -73,6 +108,15 @@
     font-size: 1rem;
     margin-bottom: 10px;
     color: #dddddd; /* Subtle gray for secondary information */
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.8rem;
+    }
 }
 
 /* LinkedIn Link */
@@ -83,28 +127,32 @@
     font-weight: bold;
     margin-top: 10px;
     transition: color 0.3s ease, text-decoration 0.3s ease;
+
+    /* Responsive font size */
+    @media (max-width: 768px) {
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.8rem;
+    }
 }
 
 .linkedin-link:hover {
     text-decoration: underline; /* Underline for emphasis */
-    color: #ffffff; /* Change to bright white on hover */
+    color: #ffffff; /* Bright white on hover */
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .page-title {
-        font-size: 2.4rem; /* Slightly smaller for smaller screens */
-    }
-
-    .card-title {
-        font-size: 1.3rem; /* Reduce font size */
-    }
-
-    .card-text {
-        font-size: 0.9rem; /* Reduce font size */
-    }
-
     .team-grid {
-        gap: 15px; /* Reduce gap between cards */
+        gap: 15px; /* Reduce grid gap for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        gap: 10px; /* Further reduce gap for ultra-small screens */
+        padding: 0 10px; /* Add padding to prevent cutting content */
     }
 }
